@@ -33,6 +33,7 @@ public class Memory {
 
     public void read() {
         int addr = addressAsInt();
+        System.out.println("Reading from address: " + addr);
         dram[addr].copy(value);
     }
 
@@ -46,9 +47,9 @@ public class Memory {
         if (data.length > 1000) {
             throw new RuntimeException("Program too large");
         }
-
+        System.out.println("Loading " + data.length + " words");
         for (int i = 0; i < data.length; i++) {
-
+            System.out.println("Word " + i + ": " + data[i]);
             if (data[i].length() != 32) {
                 throw new RuntimeException("Invalid word length");
             }

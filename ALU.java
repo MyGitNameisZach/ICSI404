@@ -63,9 +63,10 @@ public class ALU {
 
             case 11: // COMPARE
 
+                System.out.println("COMPARE: op1=" + TestConverter.toInt(op1) + " op2=" + TestConverter.toInt(op2));
                 Word32 diff = new Word32();
                 Adder.subtract(op1,op2,diff);
-
+                System.out.println("diff=" + TestConverter.toInt(diff));
                 boolean zero = true;
 
                 for(int i=0;i<32;i++){
